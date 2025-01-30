@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Blood Donation</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+	<header>
+		<div class="logo-container">
+			<img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+			<p class="logo-text">Blood Donation</p>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="{{url_for('index')}}">Home</a></li>
+				<li><a href="{{url_for('mission')}}">Mission</a></li>
+				<li><a href="{{url_for('guidelines')}}">Guidelines</a></li>
+                <li><a href="{{url_for('bloodavail')}}">Blood Availbility</a></li>
+				<li><a href="{{url_for('contact')}}">contact us</a></li>
+				<li><a href="{{url_for('history')}}">History</a></li>
+                <li><a href="{{url_for('adminlogin')}}">Admin Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Add your main content here -->
+
+	
+
+</body>
+</html>

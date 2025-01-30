@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation</title>
+    
+    <style>
+        /* Styling for background video */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Styling to make sure content is above the video */
+        body {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Optional: Set background color in case the video fails to load */
+        body {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        header {
+            color: black;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: none;
+             /* Updated font size */
+            font-weight:10000px; /* Make the header text bold */
+          }
+          
+          .logo-container {
+            display: flex;
+            align-items: center;
+          }
+          
+          .logo-container img {
+            width: 150px; /* adjust the width as needed */
+            height: auto;
+            margin-right: 10px;
+            border-radius: 95%;
+          }
+          
+          .logo-text {
+            font-size: 30px; /* Increased font size to 30px */
+            color: white;
+            font-weight: bold; /* Make logo text bold */
+          }
+          
+          nav {
+            margin-left: 200px; /* add 80px space between logo and navigation */
+          }
+          
+          nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+          }
+          
+          nav li {
+            margin-right: 50px;
+            font-size: 20px;
+          }
+          
+          nav a {
+            color:white;
+            text-decoration: none;
+            font-weight: bolder; /* Make navigation links bold */
+            font-size: 28px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+          }
+          nav a:hover {
+            text-decoration: underline;
+          }
+        
+    </style>
+</head>
+<body>
+    <!-- Background video -->
+    <video autoplay muted loop class="video-background">
+      <source src="{{url_for('static',filename='images/backkk.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+    <!-- Page content -->
+    <header>
+      <header>
+        <div class="logo-container">
+          <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+          <p class="logo-text">Blood Donation</p>
+        </div>
+        <nav>
+            <ul>
+              <li><a class="active" href="{{url_for('index')}}">Home</a></li>
+              <li><a href="{{url_for('mission')}}">Mission</a></li>
+              <li><a href="{{url_for('guidelines')}}">Guidelines</a></li>
+               <li><a href="{{url_for('bloodavail')}}">Blood Availbility</a></li>
+               <li><a href="{{url_for('contact')}}">contact us</a></li>
+              <li><a href="{{url_for('history')}}">History</a></li>
+               <li><a href="{{url_for('adminlogin')}}">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

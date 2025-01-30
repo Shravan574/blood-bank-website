@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mission.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+            <p class="logo-text">Blood Donation</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('mission') }}">Mission</a></li>
+                <li><a href="{{ url_for('guidelines') }}">Guidelines</a></li>
+                <li><a href="{{ url_for('bloodavail') }}">Blood Availability</a></li>
+                <li><a href="{{ url_for('contact') }}">contact us</a></li>
+                <li><a href="{{ url_for('history') }}">History</a></li>
+                <li><a href="{{ url_for('adminlogin') }}">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>MISSION</h1>
+    <p>
+		Blood is the most precious gift that anyone can give to another persons the gift of life. A decision to donate your blood can save a life, or even several if your
+		blood is separated into its components red cells, platelets and plasma  which can be used individually for patients with specific conditions.It Provide safe and
+		 quality blood and blood components collected from voluntary donors, round the clock, at affordable cost to the general public and free of cost to the poor. 
+		 Ensure safety and quality of blood.Blood donation camps are organized with the purpose of supplying blood to the blood banks for the need of patients suffering from
+		  cancer, hemophilia, and thalassemia or accident victims.Blood has many different functions, including: transporting oxygen and nutrients to the lungs and tissues.
+		   forming blood clots to prevent excess blood loss. carrying cells and antibodies that fight infectionBlood Donor Society helps in securing timely blood donations 
+		   in emergencies as well as in routine requirements. In the hour of need we contact the volunteer with the required blood group and our team serves as a link 
+		   between the volunteer and the patient.Blood Donor Society helps in securing timely blood donations in emergencies as well as in routine requirements. In the hour
+			of need we contact the volunteer with the required blood group and our team serves as a link between the volunteer and the patient .Every day, blood donors help 
+			patients of all ages: accident and burn victims, heart surgery and organ transplant patients, and those battling cancer. In fact, every two seconds, someone in
+			 the U.S. needs blood. Here are just a few of their stories.Blood donation is crucial for patients undergoing surgery, coping with trauma, managing chronic
+			  illnesses, and battling cancer. 
+
+    </p>
+
+    <h2>MOTIVATION</h2>
+    <div class="motivation-section">
+        <div class="quote-container">
+            <p class="quote">"The blood you donate gives someone another chance at life."</p>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/quote.jpeg') }}" alt="quote">
+        </div>
+    </div>
+
+    <div class="motivation-section">
+        <div class="quote-container">
+            <p class="quote">"Donate blood, save lives. Your little effort can give others a second chance."</p>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/e-copy.jpeg') }}" alt="blood">
+        </div>
+    </div>
+
+    <div class="motivation-section">
+        <div class="quote-container">
+            <p class="quote">"A single pint of blood can save up to three lives!"</p>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/quo.jpeg') }}" alt="blood">
+        </div>
+    </div>
+
+</body>
+</html>

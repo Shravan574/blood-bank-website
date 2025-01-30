@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Types Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2 {
+            color: black;
+        }
+
+        #form-container, #blood-list {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 5px 0;
+        }
+
+        input[type="text"], input[type="number"], select {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            height: 35px; /* Set a specific height */
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        button.delete, button.edit {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button.delete {
+            background-color: #f44336;
+        }
+
+        button.edit {
+            background-color: #2196F3;
+        }
+
+        button.delete:hover {
+            background-color: #e57373;
+        }
+
+        button.edit:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blood Types Management</h1>
+    <div id="form-container">
+        <h2>Add/Update Blood Type</h2>
+        <form id="blood-form">
+            <input type="hidden" id="blood-id" />
+            <label for="blood-type">Blood Type:</label>
+            <select id="blood-type" required>
+                <option value="" disabled selected>Select Blood Type</option>
+                <option id="blood-type-1" value="A+">A+</option>
+                <option id="blood-type-2" value="A-">A-</option>
+                <option id="blood-type-3" value="B+">B+</option>
+                <option id="blood-type-4" value="B-">B-</option>
+                <option id="blood-type-5" value="AB+">AB+</option>
+                <option id="blood-type-6" value="AB-">AB-</option>
+                <option id="blood-type-7" value="O+">O+</option>
+                <option id="blood-type-8" value="O-">O-</option>
+            </select>
+            <label for="unit">Units:</label>
+            <input type="number" id="unit" required />
+            <button type="submit">Save</button>
+        </form>
+    </div>
+    <div id="blood-list">
+        <h2>Blood Types List</h2>
+        <table id="blood-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Blood Type</th>
+                    <th>Units</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for blood in blood_types %}
+                {% if blood.type in ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %}
+                <tr>
+                    <td>{{ blood._id }}</td>
+                    <td>{{ blood.type }}</td>
+                    <td>{{ blood.unit }}</td>
+                    <td>
+                        <button class="edit" onclick="editBloodType('{{ blood._id }}', '{{ blood.type }}', '{{ blood.unit }}')">Edit</button>
+                        <button class="delete" onclick="deleteBloodType('{{ blood._id }}')">Delete</button>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('blood-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const id = document.getElementById('blood-id').value;
+            const type = document.getElementById('blood-type').value;
+            const unit = document.getElementById('unit').value;
+
+            const data = { type, unit };
+            const url = id ? `/blood_management/blood_types/${id}` : '/blood_management/blood_types';
+            const method = id ? 'PUT' : 'POST';
+
+            try {
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Failed to save blood type');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        async function deleteBloodType(id) {
+            if (confirm('Are you sure you want to delete this blood type?')) {
+                try {
+                    const response = await fetch(`/blood_management/blood_types/${id}`, {
+                        method: 'DELETE'
+                    });
+
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert('Failed to delete blood type');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+        }
+
+        function editBloodType(id, type, unit) {
+            document.getElementById('blood-id').value = id;
+            document.getElementById('blood-type').value = type;
+            document.getElementById('unit').value = unit;
+        }
+    </script>
+</body>
+</html>

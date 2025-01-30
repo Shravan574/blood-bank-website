@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport " content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Guidelines</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/guidelines.css') }}">
+</head>
+<body>
+    <header>
+        
+            <div class="logo-container">
+                <img src="{{ url_for('static',filename='images/logo.jpg') }}" alt="Logo">
+                <p class="logo-text">Blood Donation</p>
+            </div>
+            <nav>
+                <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+				<li><a href="{{ url_for('mission') }}">Mission</a></li>
+				<li><a href="{{ url_for('guidelines') }}">Guidelines</a></li>
+                <li><a href="{{ url_for('bloodavail') }}">Blood Availbility</a></li>
+				<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+				<li><a href="{{ url_for('history') }}">History</a></li>
+                <li><a href="{{ url_for('adminlogin') }}">Admin Login</a></li>
+                </ul>
+            </nav>
+        
+        
+    </header>
+    <h1>GUIDELINES</h1>
+    <main>
+        <section>
+            <h2>Who should donate Blood?</h2>
+            <p>
+                <ul>
+                   <li> Any healthy adult can donate blood.</li>
+                   <li> Men can donate at 3 month intervals while women can do so after every 6 months.</li>
+                    <li> One should be above 45kgs in weight.</li>
+                    <li> One should fall within the age group of 18-65 years.</li>
+                    <li> One should not be suffering from any serious diseases</li>
+                    <li> Pregnant and/or breastfeeding mothers should not be donating.</li> 
+                </ul>
+            </p>
+                </section>
+        <section>
+            <h3>Benefits of Blood Donation</h3>
+            <p>
+                <ul>
+                   <li> Free health checkup! : A trained staff member checks your pulse, BP, Weight, etc.</li>
+        
+                   <li>  Reveals any potential diseases: Your blood undergoes a screening process for many diseases.</li> In case you test positive for anything, early detection can help you get better sooner.
+                    
+                   <li> Boosts both your mental and physical health.</li>
+                    
+                   <li> Helps create fresh blood in your body.</li>          
+                </ul>
+            </p>
+                </section>
+                <section>
+                    <h2>Before donating, make sure you ..</h2>
+                    <p>
+                        <ul>
+                          <li> Stay hydrated.</li>
+                
+                         <li>  Have a balanced meal.</li>
+                            
+                         <li>  Have a good night sleep. Do not overwork.</li> 
+                            
+                        <li>   Lay off drinks and smoking.</li>
+                            
+                        <li>  Increase the consumption of Iron rich foods.</li>
+                            
+                        <li>  Avoid fatty foods.</li> 
+                        </ul>
+                    </p>
+                                        </section>
+                        <section>
+                            <h2>While donating, make sure you..</h2>
+    <p>
+        <ul>
+           <li> Inform the staff know if you are currently on medication.</li>          
+            <li> Relax: Keep a calm mind. You can also bring a book or listen to music while donating.</li>
+            <li> Interact with people around you to keep your mind occupied</li>
+        </ul>
+    </p>                                </section>
+<section>
+    <h2>After donating, make sure you..</h2>
+    <p>
+        <ul>
+        <li> Do not get up immediately after the process is over, rest for at least 5-7 minutes.</li>
+        <li> Consume the refreshments given to you. Maintain a balanced diet for the next 24 hours and stay hydrated.</li>
+        <li> Avoid strenuous activities.</li>
+        <li> Lay off drinking and smoking for the next 24 hours (at least)</li>
+        <li> Rest properly.</li>
+        </ul>
+    </p>
+                  </section>
+                
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Blood Bank Guidelines</p>
+    </footer>
+</body>
+</html>

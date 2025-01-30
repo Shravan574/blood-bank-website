@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bloodavail.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+            <p class="logo-text">Blood Donation</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('mission') }}">Mission</a></li>
+                <li><a href="{{ url_for('guidelines') }}">Guidelines</a></li>
+                <li><a href="{{ url_for('bloodavail') }}">Blood Availability</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                <li><a href="{{ url_for('history') }}">History</a></li>
+                <li><a href="{{ url_for('adminlogin') }}">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <h1>Blood Availability</h1>
+        <h3>Enter the given details</h3>
+        <form id="blood-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <label for="blood-group">Blood Group:</label>
+            <input type="text" id="blood-group" name="blood_group" placeholder="Enter blood group" required>
+
+            <div class="wrap">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('blood-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+        
+            const location = document.getElementById('location').value;
+            const bloodGroup = document.getElementById('blood-group').value;
+        
+            fetch('/blood_management/check_availability', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ location: location, blood_group: bloodGroup }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.textContent = data.message || data.error || 'An error occurred. Please try again.';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').textContent = 'An error occurred. Please try again.';
+            });
+        });
+        
+    </script>
+</body>
+</html>

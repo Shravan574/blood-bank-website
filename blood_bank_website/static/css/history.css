@@ -1,0 +1,179 @@
+/* General styling for body */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #555;
+  text-align: center;
+}
+
+/* Header styling */
+header {
+  background-color: wheat;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Navigation styling */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #ff6347;
+}
+
+/* Board Members section */
+h1 {
+  margin: 40px 0;
+  font-size: 36px;
+  color: #b22222;
+}
+
+/* Styling the boxes and images */
+.hero, .hero1 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.box, .box1, .box2, .box3, .box4, .box5 {
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-basis: 30%;
+}
+
+.hero img, .hero1 img {
+  width: 150px;
+  height: 150px; /* Ensuring all images are the same height */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+/* Font size adjustments */
+.box h2, .box1 h2, .box2 h2, .box3 h3, .box4 h3, .box5 h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.box p, .box1 p, .box2 p, .box3 p, .box4 p, .box5 p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* History section */
+.history {
+  font-weight: bolder;
+  color: aliceblue;
+}
+
+/* Image Rows: a, b, c, d, e, f and g, h, i, j, k, l */
+.hero3, .hero4 {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; /* Gap between images */
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.hero3 img, .hero4 img {
+  width: 200px; /* Ensuring all images have the same width */
+  height: 200px; /* Ensuring all images have the same height */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+  color: aquamarine;
+  font-size: larger;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #283747;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero img, .hero1 img, .hero3 img, .hero4 img {
+    width: 150px;
+    height: 150px; /* Adjust for smaller screens */
+  }
+
+  .hero, .hero1, .hero3, .hero4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box, .box1, .box2, .box3, .box4, .box5 {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}

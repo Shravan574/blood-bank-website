@@ -1,0 +1,135 @@
+header {
+  color: white;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Add background color for better contrast */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 100px; /* Adjust the width for better visibility */
+  height: auto; /* Keep the aspect ratio */
+  margin-right: 10px;
+  object-fit: contain; /* Ensures the logo fits within the boundaries */
+}
+
+.logo-text {
+  font-size: 25px;
+  color: white;
+}
+
+nav {
+  margin-left: 50px; /* Reduced margin to align logo and nav items */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 50px;
+  font-size: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  width: auto;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  border-radius: 12px;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Hover effect: light up with background color and glowing shadow */
+nav a:hover {
+  background-color: aliceblue;
+  color: black;
+  box-shadow: 0 0 15px rgba(255, 99, 71, 0.8);
+  text-decoration: none;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: lightcoral;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 100px 50px;
+  transition: transform 0.2s;
+  width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: red;
+  width: 100%;
+  font-size: 16px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
