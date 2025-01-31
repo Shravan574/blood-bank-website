@@ -33,7 +33,7 @@ The *MGR Voluntary Blood Bank Website* is an online platform designed to help us
 ### 📌 Installation & Setup
 #### 1️⃣ Clone the repository
 ```sh
-git clone <repository-url>
+git clone <https://github.com/Shravan574/blood-bank-website>
 cd mgr-blood-bank
 pip install -r requirements.txt
 python app.py
