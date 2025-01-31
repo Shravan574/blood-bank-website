@@ -28,7 +28,7 @@ The *MGR Voluntary Blood Bank Website* is an online platform designed to help us
 - HTML, CSS, JavaScript
 - VS Code / PyCharm (Recommended for development)
 
-  [![View ](static/images/logoo.png)]
+  [![View ](Screenshot (54).png)]
 
 ### 📌 Installation & Setup
 #### 1️⃣ Clone the repository
